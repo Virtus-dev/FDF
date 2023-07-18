@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arigonza < arigonza@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:22:00 by arigonza          #+#    #+#             */
-/*   Updated: 2023/01/14 12:29:58 by arigonza         ###   ########.fr       */
+/*   Updated: 2023/07/18 12:01:08 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoinG(char *s1, char *s2)
 {
 	char	*combinedstring;
 	size_t	i;
@@ -67,7 +67,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (combinedstring);
 }
 
-void	ft_strlcpy(char const *src, char *dst)
+void	ft_strlcpyG(char const *src, char *dst)
 {
 	int	i;
 

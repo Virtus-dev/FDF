@@ -6,7 +6,7 @@
 #    By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 13:46:00 by arigonza          #+#    #+#              #
-#    Updated: 2023/06/26 14:18:53 by arigonza         ###   ########.fr        #
+#    Updated: 2023/07/18 12:27:22 by arigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,23 +23,41 @@ SRC		= \
 	src/ft_strjoin.c src/ft_strtrim.c src/ft_split.c src/ft_printf.c src/ft_printf_utils.c \
 	src/ft_itoa.c src/ft_lstnew_bonus.c src/ft_lstadd_front_bonus.c src/ft_is_space.c\
 	src/ft_lstsize_bonus.c src/ft_lstlast_bonus.c src/ft_lstadd_back_bonus.c src/ft_lstdelone_bonus.c src/ft_lstclear_bonus.c src/ft_lstiter_bonus.c src/ft_lstmap_bonus.c \
+	src/get_next_line.c src/get_next_line_utils.c \
+
+# Colors
+
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
 
 OBJ		= ${SRC:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@echo "$(GREEN)Creating library...$(DEF_COLOR)"
 	@$(AR) $(NAME) $(OBJ)
 
 clean:
+	@echo "$(RED)Cleaning libft object files...$(DEF_COLOR)"
 	@rm -rf $(OBJ)
 
 fclean: clean
+	@echo "$(MAGENTA)Fcleaning libft...$(DEF_COLOR)"
 	@rm -f $(NAME)
 
 %.o: %.c
 	@gcc $(CFLAGS) -I includes -o $@ -c $<
 
 re: fclean all
+	@echo "$(BLUE)Rebuilding libft...$(DEF_COLOR)"
 
 .PHONY: all clean fclean re bonus

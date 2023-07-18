@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arigonza < arigonza@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:21:34 by arigonza          #+#    #+#             */
-/*   Updated: 2023/01/14 12:32:44 by arigonza         ###   ########.fr       */
+/*   Updated: 2023/07/18 11:59:54 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*read_file(int fd, char *backup)
 			return (NULL);
 		}
 		buffer[readed_bytes] = '\0';
-		backup = ft_strjoin(backup, buffer);
+		backup = ft_strjoinG(backup, buffer);
 		if (ft_strchr(backup, '\n'))
 			break ;
 	}

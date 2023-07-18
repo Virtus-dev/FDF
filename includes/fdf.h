@@ -6,17 +6,17 @@
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 07:56:12 by arigonza          #+#    #+#             */
-/*   Updated: 2023/07/16 17:24:02 by arigonza         ###   ########.fr       */
+/*   Updated: 2023/07/18 11:55:02 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FDF_H
 # define FDF_H
 
-# include "lib/libft/includes/libft.h"
-# include "lib/libft/includes/get_next_line.h"
-# include "lib/libft/includes/ft_printf.h"
-# include "lib/minilibx-linux/mlx.h"
+# include "../lib/libft/includes/libft.h"
+# include "../lib/libft/includes/get_next_line.h"
+# include "../lib/libft/includes/ft_printf.h"
+# include "../lib/minilibx-linux/mlx.h"
 # include <math.h>
 
 # define WIDTH 1920
