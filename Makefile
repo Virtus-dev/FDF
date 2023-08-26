@@ -13,18 +13,18 @@
 NAME	= fdf
 CC		= gcc
 CFLAGS = -Wextra -Wall -Werror
-MINILIBX_DIR = ./lib/minilibx-linux
 
-INC = -I includes/ -I$(MINILIBX_DIR) -I lib/libft/includes
-MINILIBX = $(MINILIBX_DIR)/libmlx.a
-MINILIBXCC = -I mlx -L $(MINILIBX_DIR) -lmlx
-#OPENGL = -framework OpenGL -framework AppKit
+MLX42 = MLX42/libmlx42.a
+
+INC = -I includes/ -I lib/libft/includes
 
 LIBFT = lib/libft/libft.a
 
 SRCS = ./src/main.c \
 
 OBJS = ${SRCS:.c=.o}
+
+OPENGL := -framework Cocoa -framework OpenGL -framework IOKit -I"/Users/arigonza/.brew/opt/glfw/include/" -lglfw -L"/Users/arigonza/.brew/opt/glfw/lib/"
 
 # Colors
 
@@ -38,23 +38,21 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-all: $(minilibx) $(NAME)
-	@make -C $(NAME)
+all: $(MLX42) $(NAME)
+	# @make -C $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
+$(NAME): $(OBJS) $(LIBFT) $(MLX42)
 	@echo "$(GREEN)Creating executable...$(DEF_COLOR)"
-	@$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJS) $(MINILIBXCC) $(OPENGL) $(LIBFT)
-
-$(MINILIBX):
-	@make -C $(MINILIBX_DIR)
-	@echo "$(GREEN)Minilibx compiled$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJS) $(MLX42) $(OPENGL) $(LIBFT)
 
 $(LIBFT):
 	@echo "$(GREEN)Compiling libft...$(DEF_COLOR)"
 	@make -C lib/libft
 
+$(MLX42) :
+	@make -C MLX42/
+
 clean:
-	# @make clean -C $(MINILIBX_DIR)
 	@rm -rf $(OBJS)
 	@make clean -C lib/libft
 	@echo "$(RED)Objects cleaned..$(DEF_COLOR)"
@@ -63,6 +61,8 @@ fclean: clean
 	@echo "$(RED)Deleting executables...$(DEF_COLOR)"
 	@rm -rf $(NAME)
 	@make fclean -C lib/libft
+	@make fclean -C MLX42/
+
 
 re: fclean all
 

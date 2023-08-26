@@ -16,11 +16,14 @@
 # include "../lib/libft/includes/libft.h"
 # include "../lib/libft/includes/get_next_line.h"
 # include "../lib/libft/includes/ft_printf.h"
-# include "../lib/minilibx-linux/mlx.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdbool.h>
 
-# define WIDTH 1920
-# define HEIGHT 1080
+// # define WIDTH 1920
+// # define HEIGHT 1080
 
 typedef struct	s_point
 {
